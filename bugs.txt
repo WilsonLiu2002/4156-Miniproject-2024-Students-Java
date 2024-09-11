@@ -106,3 +106,27 @@ I did not "fixed" the rest since I find them not actually a bug :
     I think the "UnnecessaryImport" is okay to stay so that i do not need to import several times
     The UnnecessaryAnnotationValueElement actually serves for better understanding
     The UseLocaleWithCaseConversions is not usually used when using toLowerCase/toUpperCase though it might be a matter when other langauge is involved.
+
+These are the bugs I fixed before using PMD; I find them by using difference between my repo and the course original repo:
+
+Line number is the line in my student repo
+
+course.java: line 25: set enrolledStudentCount to 0 instead of 500
+             line 34: add a if statement for enrollStudent()
+             line 47: add a if statement for dropStudent()
+             line 56: correct courselocation intead of instructor name
+             line 61: correct instructor name intead of courselocation
+             line 96: add a if statment about capacity
+department.java: 
+             line 36: remove -
+             line 67: add a if statement for dropPersonFromMajor()
+             line 101: modify toString() 
+RouteController.java:
+             line 41: change OK to Not_Found
+             line 44: change Not_Found to OK
+             line 80: change Forbidden to OK
+             line 146: change Forbidden to Not_Found
+             line 283: change from "some time" to " requestedCourse.getCourseTimeSlot
+             line 377: change from "Student has been dropper" to "No student in this course"
+             line 388: add java doc
+             line 501: add java doc
