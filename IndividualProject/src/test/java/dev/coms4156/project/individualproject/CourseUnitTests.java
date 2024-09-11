@@ -6,15 +6,20 @@ import org.springframework.test.context.ContextConfiguration;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Doc testing Course.
+ */
 @SpringBootTest
 @ContextConfiguration
-public class CourseUnitTests {
 
+public class CourseUnitTests {
+  /**
+   * Class testing Department.
+   */
   @BeforeAll
   public static void setupCourseForTesting() {
     testCourse = new Course("Gail Kaiser", "501 NWC", 
                                   "10:10-11:25", 120);
-   //testCourse.setEnrolledStudentCount(110);
   }
   
   @Test
@@ -74,7 +79,7 @@ public class CourseUnitTests {
     testCourse = new Course("Gail Kaiser", 
     "501 NWC", "10:10-11:25", 120);
     String expectedResult = 
-    "\nInstructor: Gail Kaiser; Location: 501 NWC; Time: 10:10-11:25";
+        "\nInstructor: Gail Kaiser; Location: 501 NWC; Time: 10:10-11:25";
     assertEquals(expectedResult, testCourse.toString());
   }
 
