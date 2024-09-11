@@ -5,7 +5,7 @@ import java.io.*;
 /**
  * Represents a course within a department within an educational institution.
  * This class stores information about the course, including its instructor's name,
-  * course location, timeslot, capacity and number of enrolled students.
+ * course location, timeslot, capacity and number of enrolled students.
  */
 public class Course implements Serializable {
 
@@ -66,7 +66,7 @@ public class Course implements Serializable {
     return this.courseTimeSlot;
   }
 
-
+  @Override
   public String toString() {
     return "\nInstructor: " + instructorName +  "; Location: "  
       + courseLocation +  "; Time: " + courseTimeSlot;
@@ -87,19 +87,22 @@ public class Course implements Serializable {
     this.courseTimeSlot = newTime;
   }
 
-
+  /**
+   * update enrollment count of specified course under capacity.
+   *
+   * no return value
+   */
   public void setEnrolledStudentCount(int count) {
     if (count > enrollmentCapacity) {
       enrolledStudentCount = enrollmentCapacity;
-    }
-    else{
+    } else {
       enrolledStudentCount = count;
     }
   }
 
 
   public boolean isCourseFull() {
-    return !(enrollmentCapacity > enrolledStudentCount);
+    return enrollmentCapacity <= enrolledStudentCount;
   }
 
   @Serial

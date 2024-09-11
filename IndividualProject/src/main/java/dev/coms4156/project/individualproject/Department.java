@@ -100,6 +100,7 @@ public class Department implements Serializable {
    *
    * @return A string representing the department.
    */
+  @Override
   public String toString() {
     StringBuilder result = new StringBuilder();
     result.append("Department: ").append(deptCode).append("\n")
@@ -109,7 +110,7 @@ public class Department implements Serializable {
       Course value = entry.getValue();
       result.append(key).append(": ").append(value.toString()).append("\n");
     }
-    return result.toString().substring(0,result.length()-1);
+    return result.toString().substring(0, result.length() - 1);
   }
 
   @Serial
